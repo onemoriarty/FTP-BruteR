@@ -34,11 +34,12 @@ if sunucu == "":
     sys.exit()
 
 try:
-    with open(kelimelistesi, 'r') as ftpşifreleri:
+    with open(kelimelistesi, 'r', encoding='utf-8', errors='ignore') as ftpşifreleri:
         wordlist = ftpşifreleri.read().splitlines()
 except FileNotFoundError:
     print(Fore.RED + "Şifre listesi bulunamadı.")
     sys.exit()
+
 
 def girişdenemesi(satır):
     try:
